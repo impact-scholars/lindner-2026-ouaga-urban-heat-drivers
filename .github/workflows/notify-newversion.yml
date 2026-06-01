@@ -1,0 +1,15 @@
+name: Notify Zenodo new-version reminder
+
+on:
+  pull_request:
+    types: [opened, reopened, ready_for_review]
+    branches: [main]
+
+permissions:
+  contents: read
+  pull-requests: write # sticky comment
+  issues: write # create/apply editor-action-needed label on the PR
+
+jobs:
+  remind:
+    uses: impact-scholars/isp-actions-config/.github/workflows/notify-newversion.yml@v0.2.0

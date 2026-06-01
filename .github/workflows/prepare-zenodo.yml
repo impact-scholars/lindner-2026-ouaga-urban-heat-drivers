@@ -1,0 +1,28 @@
+name: Prepare Zenodo deposit
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        required: true
+        type: string
+        description: Release version (e.g. 0.1.0, no leading v)
+      sandbox:
+        required: false
+        type: boolean
+        default: true
+        description: Use sandbox.zenodo.org (uncheck to publish to production zenodo.org)
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  prepare:
+    uses: impact-scholars/isp-actions-config/.github/workflows/prepare-zenodo.yml@v0.2.0
+    with:
+      version: ${{ inputs.version }}
+      sandbox: ${{ inputs.sandbox }}
+    secrets:
+      ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+      ZENODO_TOKEN_SANDBOX: ${{ secrets.ZENODO_TOKEN_SANDBOX }}

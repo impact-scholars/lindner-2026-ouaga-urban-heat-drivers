@@ -1,0 +1,18 @@
+name: Publish Zenodo deposit
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write # commit comment on success
+  issues: write # open issue on failure with custom tag
+
+jobs:
+  publish:
+    uses: impact-scholars/isp-actions-config/.github/workflows/publish-zenodo.yml@v0.2.0
+    with:
+      tag: ${{ github.ref_name }}
+    secrets:
+      ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+      ZENODO_TOKEN_SANDBOX: ${{ secrets.ZENODO_TOKEN_SANDBOX }}

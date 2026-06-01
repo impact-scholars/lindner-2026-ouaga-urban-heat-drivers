@@ -1,0 +1,18 @@
+version: 1
+extends:
+- https://raw.githubusercontent.com/impact-scholars/impact-scholars.github.io/v0.2.0/nexus.yml
+- https://raw.githubusercontent.com/impact-scholars/isp-actions-config/v0.2.0/isp-micropublication-2025.yml
+
+project:
+  authors: []
+  toc:
+  - file: index.md
+  id:
+  title:
+  keywords: []
+  github:
+  bibliography:
+  - bib.bib
+
+site:
+  template: https://raw.githubusercontent.com/impact-scholars/myst-theme/v0.2.0/.deploy/book/template.yml
