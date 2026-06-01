@@ -1,18 +1,89 @@
 version: 1
 extends:
-- https://raw.githubusercontent.com/impact-scholars/impact-scholars.github.io/v0.2.0/nexus.yml
-- https://raw.githubusercontent.com/impact-scholars/isp-actions-config/v0.2.0/isp-micropublication-2025.yml
+  - https://raw.githubusercontent.com/impact-scholars/impact-scholars.github.io/v0.1.0/nexus.yml
+  - https://raw.githubusercontent.com/impact-scholars/isp-actions-config/v0.1.0/isp-micropublication-2025.yml
 
 project:
-  authors: []
-  toc:
-  - file: index.md
-  id:
-  title:
-  keywords: []
-  github:
-  bibliography:
-  - bib.bib
+  title: "Low Built-Up Density Emerges as a Key Driver of Heat Extremes over the Sahel"
 
-site:
-  template: https://raw.githubusercontent.com/impact-scholars/myst-theme/v0.2.0/.deploy/book/template.yml
+  id: hotspotters-micropublication
+
+  authors:
+    - name: Elisabeth Lindner
+      affiliations:
+        - "Heidelberg Institute of Global Health (HIGH), Heidelberg University Hospital, Heidelberg University, Germany"
+      orcid: "0009-0004-7031-5080"
+      roles:
+        - Conceptualization
+        - Methodology
+        - Software
+        - Visualization
+        - Formal analysis
+        - Investigation
+        - Writing - original draft
+        - Writing - review & editing
+
+    - name: Helyne Adamson
+      affiliations:
+        - "Independent Researcher, Germany"
+      orcid: "0000-0002-3477-4296"
+      roles:
+        - Conceptualization
+        - Methodology
+        - Software
+        - Visualization
+        - Formal analysis
+        - Investigation
+        - Writing - original draft
+        - Writing - review & editing
+
+    - name: Ajadi Sodiq Abayomi
+      affiliations:
+        - "University of Manchester, United Kingdom"
+      orcid: "0000-0003-3275-1100"
+      roles:
+        - Conceptualization
+        - Methodology
+        - Software
+        - Visualization
+        - Formal analysis
+        - Investigation
+        - Writing - original draft
+        - Writing - review & editing
+
+    - name: Sharon Christa
+      affiliations:
+        - "School of Computing, MIT Art Design and Technology University, Pune, India"
+      orcid: "0000-0001-6717-2200"
+      roles:
+        - Conceptualization
+        - Methodology
+        - Software
+        - Visualization
+        - Formal analysis
+        - Writing - original draft
+        - Writing - review & editing
+    - name: Daniel Fiifi Tawia Hagan
+      affiliations:
+        - Hydro-Climate Extremes Lab, Ghent University, Ghent, Belgium
+      orcid: "0000-0003-3501-9783"
+      roles:
+        - Formal analysis
+        - Investigation
+        - Writing - original draft
+        - Writing - review & editing
+
+
+  toc:
+    - file: index.md
+
+  keywords:
+    - urban heat island
+    - machine learning
+    - causal inference
+    - remote sensing
+
+  github: "https://github.com/helyne/ouaga-urban-heat-drivers"
+
+  bibliography:
+    - bib.bib

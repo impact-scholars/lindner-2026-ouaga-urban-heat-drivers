@@ -1,0 +1,72 @@
+# Ignore macOS files for folder customization attributes
+.DS_Store
+**/.DS_Store
+
+# Data, figures, and reference materials
+figures/*
+!figures/*.svg
+!figures/pub/
+!figures/pub/**
+# Don't re-include macOS junk inside figures/pub/
+figures/pub/**/.DS_Store
+# Explainer figures referenced by docs/methods/gccm_explainer.md
+!figures/gccm_explainer_asymmetry.png
+!figures/gccm_explainer_convergence.png
+!figures/gccm_explainer_crossmap.png
+!figures/gccm_explainer_e_comparison.png
+!figures/gccm_explainer_manifold_v2.png
+!figures/gccm_explainer_rings_intro.png
+!figures/gccm_explainer_spatial_context.png
+!figures/gccm_explainer_tau_comparison.png
+!figures/gccm_scale_comparison.png
+data/
+!data/README.md
+!data/raw/
+data/raw/*
+!data/raw/Shapefile Ouaga/
+
+# scripts
+scripts/*
+!scripts/build_submission_zip.sh
+!scripts/figure_style.py
+!scripts/generate_supplementary_figures.py
+!scripts/make_gccm_asymmetry_pub.py
+!scripts/make_gccm_convergence_pub.py
+!scripts/regenerate_panels.sh
+
+# outputs/gccm/ — only the canonical publication run is tracked
+outputs/gccm/*
+!outputs/gccm/main_E3_tau1/
+
+literature/
+
+# Work in progress and compiled Python files
+wip/
+__pycache__/
+*.pyc
+
+# Cached notebook outputs
+notebooks/cache/
+
+# Meeting recordings and presentation files
+meetings/
+presentations/
+
+# Large binary files
+*.mov
+*.nc
+
+# Pickled models — too large for git, archived on Zenodo
+models/
+
+# Jupyter auto-save temp files
+*.ipynb.tmp
+
+# Local environment files (never commit secrets)
+*.env
+
+# Python editable-install artifacts
+*.egg-info/
+
+# pytest cache
+.pytest_cache/

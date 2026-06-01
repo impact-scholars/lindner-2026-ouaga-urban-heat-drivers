@@ -1,0 +1,20 @@
+# =============================================================================
+# git archive export-ignore rules
+#
+# Files listed here stay in git for collaborators but are excluded from the
+# submission zip produced by `git archive -o submission.zip HEAD`.
+# =============================================================================
+
+# Methodology exploration notebooks — kept on the public repo for reviewers
+# and colleagues, but excluded from the publication snapshot.
+# See notebooks/README.md for context.
+notebooks/00_quick_start.ipynb          export-ignore
+notebooks/download_individual_bands.ipynb  export-ignore
+notebooks/models.ipynb                  export-ignore
+notebooks/DEM/                          export-ignore
+notebooks/Distance_measures/            export-ignore
+notebooks/Hotspots/                     export-ignore
+notebooks/NDVI_NDBI_BSI/                export-ignore
+
+# Contribution guide — for active collaborators, not the publication archive
+CONTRIBUTING.md                         export-ignore

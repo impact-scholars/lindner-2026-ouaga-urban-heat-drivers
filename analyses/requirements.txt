@@ -1,0 +1,31 @@
+# Geospatial & remote sensing
+earthengine-api==1.7.10
+geemap==0.37.1
+geopandas==1.1.2
+rasterio==1.4.4
+
+# Data processing & analysis
+numpy==2.4.1
+pandas==2.3.3
+scipy==1.17.0
+xarray==2026.4.0
+netCDF4==1.7.4
+
+# Machine learning & interpretability
+scikit-learn==1.8.0
+xgboost==3.1.3
+shap==0.51.0
+joblib==1.5.3
+
+# Visualization
+matplotlib==3.10.8
+seaborn==0.13.2
+plotly==6.5.2
+ipyleaflet==0.20.0
+localtileserver==0.10.7
+
+# Configuration
+pyyaml==6.0.3
+
+# Notebook environment
+jupyterlab==4.5.3

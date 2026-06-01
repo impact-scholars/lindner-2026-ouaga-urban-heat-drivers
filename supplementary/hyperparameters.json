@@ -1,0 +1,22 @@
+{
+  "XGBoost": {
+    "n_estimators": 500,
+    "max_depth": 9,
+    "learning_rate": 0.2,
+    "reg_alpha": 0,
+    "reg_lambda": 0.001,
+    "random_state": 42
+  },
+  "Random Forest": {
+    "n_estimators": 300,
+    "max_depth": null,
+    "random_state": 42
+  },
+  "SVM": {
+    "C": 100,
+    "kernel": "rbf",
+    "gamma": "scale",
+    "probability": true,
+    "random_state": null
+  }
+}
