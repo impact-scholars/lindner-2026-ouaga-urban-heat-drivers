@@ -1,7 +1,7 @@
 version: 1
 extends:
-  - https://raw.githubusercontent.com/impact-scholars/impact-scholars.github.io/v0.1.0/nexus.yml
-  - https://raw.githubusercontent.com/impact-scholars/isp-actions-config/v0.1.0/isp-micropublication-2025.yml
+  - https://raw.githubusercontent.com/impact-scholars/impact-scholars.github.io/v0.2.0/nexus.yml
+  - https://raw.githubusercontent.com/impact-scholars/isp-actions-config/v0.2.0/isp-micropublication-2025.yml
 
 project:
   title: "Low Built-Up Density Emerges as a Key Driver of Heat Extremes over the Sahel"
@@ -83,7 +83,7 @@ project:
     - causal inference
     - remote sensing
 
-  github: "https://github.com/helyne/ouaga-urban-heat-drivers"
+  github: "https://github.com/impact-scholars/lindner-2026-ouaga-urban-heat-drivers"
 
   bibliography:
     - bib.bib
