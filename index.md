@@ -121,11 +121,8 @@ SHAP analysis identified built-up density as the dominant predictor of hotspot c
 
 \
 **A.** Study area context and land surface temperature (LST) distribution across Ouagadougou during the March–May hot season (2022-2024).  
-\
 **B.** SHAP-based global feature importance and summary distribution for the XGBoost model.  
-\
 **C.** Spatial hotspot susceptibility maps predicted by XGBoost, Random Forest, and SVM.  
-\
 **D.** GCCM convergence curves and directional asymmetry results.
 ```
 
@@ -154,31 +151,32 @@ All analysis code, processing notebooks, and instructions for reproducing the fi
 :name: fig-s1
 :alt: Per-band spatial maps of all ten predictor variables.
 
-**Figure S1.** Spatial distribution of the ten variables (NDVI, NDBI, BSI, DEM, distance to water, distance to roads, built-up density, green space density, LST, hotspot label) across the Ouagadougou administrative boundary at 30 m resolution, March-May 2022-2024 hot-season composite.
+Spatial distribution of the ten variables (NDVI, NDBI, BSI, DEM, distance to water, distance to roads, built-up density, green space density, LST, hotspot label) across the Ouagadougou administrative boundary at 30 m resolution, March-May 2022-2024 hot-season composite.
 :::
 
 :::{figure} supplementary/figS2_methods_workflow.png
 :name: fig-s2
 :alt: Methods workflow diagram.
 
-**Figure S2.** Methods workflow showing the four analytical stages: data acquisition, preprocessing and target definition, predictive modelling and interpretability, and causal validation.
+Methods workflow showing the four analytical stages: data acquisition, preprocessing and target definition, predictive modelling and interpretability, and causal validation.
 :::
 
 :::{figure} supplementary/figS3_heatwave_analysis.png
 :name: fig-s3
 :alt: Heatwave example-day spatial fields.
 
-**Figure S3.** Six representative heatwave-event days in 2024 showing daily Tmax spatial fields across the Ouagadougou region (gridded ERA5 reanalysis, ~31 km native resolution).
+Six representative heatwave-event days in 2024 showing daily Tmax spatial fields across the Ouagadougou region (gridded ERA5 reanalysis, ~31 km native resolution).
 :::
 
 :::{figure} supplementary/figS4_pearson_correlation.png
 :name: fig-s4
 :alt: Pearson correlation matrix of predictors and LST.
 
-**Figure S4.** Pairwise Pearson correlation among the eight continuous predictors and LST. Complements Table 3 in the main text by showing all off-diagonal pairs (e.g., the high collinearity between BSI and NDBI, r ≈ +0.94).
+Pairwise Pearson correlation among the eight continuous predictors and LST. Complements Table 3 in the main text by showing all off-diagonal pairs (e.g., the high collinearity between BSI and NDBI, r ≈ +0.94).
 :::
 
-**Table S1. Model hyperparameters.** Selected hyperparameters for the three classifiers, read directly from the pre-fit pickled estimators archived on Zenodo (DOI: [10.5281/zenodo.19835805](https://doi.org/10.5281/zenodo.19835805)).
+:::{table} Model hyperparameters. Selected hyperparameters for the three classifiers, read directly from the pre-fit pickled estimators archived on Zenodo (DOI: [10.5281/zenodo.19835805](https://doi.org/10.5281/zenodo.19835805)).
+:align: center
 
 | Hyperparameter | XGBoost | Random Forest | SVM |
 |---|---|---|---|
@@ -193,10 +191,15 @@ All analysis code, processing notebooks, and instructions for reproducing the fi
 | `probability`      | —     | —     | true  |
 | `random_state`     | 42    | 42    | —     |
 
-**Table S2. Test-set classification metrics.**
+:::
+
+:::{table} Test-set classification metrics.
+:align: center
 
 | Model         | Accuracy | Precision | Recall | F1    | Cohen's κ |
 |---            |---:     |---:      |---:   |---:  |---:      |
 | XGBoost       | 0.946   | 0.812    | 0.616 | 0.700| 0.671    |
 | Random Forest | 0.938   | 0.866    | 0.471 | 0.610| 0.580    |
 | SVM           | 0.919   | 0.806    | 0.274 | 0.408| 0.376    |
+
+:::
