@@ -1,0 +1,99 @@
+# =============================================================================
+# Processing Pipeline Configuration
+# =============================================================================
+# Single source of truth for all pipeline parameters.
+#
+# HOW TO USE:
+#   from src.data import load_dataset
+#   df, config = load_dataset()
+#
+# This gives you a DataFrame with one row per valid pixel and columns for
+# each band (NDVI, LST, etc.), plus lon/lat coordinates. The config dict
+# contains all the settings below, plus raster metadata under config['raster_info'].
+#
+# You should not need to edit this file unless you are changing the study
+# area, time period, or adding new features to the pipeline.
+# =============================================================================
+
+
+# -- Study design ----------------------------------------------------------
+# These are the scientific choices that define the analysis.
+
+study_years: [2022, 2023, 2024]        # Years to average over
+hot_season_months: [3, 4, 5]           # March, April, May (hottest months)
+target_crs: "EPSG:32630"              # UTM zone 30N (meters), covers Ouagadougou
+target_scale: 30                       # meters per pixel (Landsat LST native resolution)
+
+
+# -- Feature engineering ----------------------------------------------------
+# Parameters that control how features are computed on GEE.
+
+sentinel_year: 2024                    # Sentinel-2 imagery for spectral indices
+worldcover_year: 2021                  # ESA WorldCover land classification (latest available)
+cloud_threshold: 20                    # max % cloud cover for Landsat/Sentinel scenes
+lst_valid_range: [20, 60]              # Celsius — pixels outside this range are excluded
+
+# A pixel is classified as a "hotspot" if its LST exceeds:
+#   mean + (hotspot_std_multiplier × std)
+hotspot_std_multiplier: 1.0
+
+
+# -- Data -------------------------------------------------------------------
+# The processed raster is stored at data/processed/<raster_name>.tif.
+# The config loader derives all paths from these values automatically.
+
+raster_name: "ouaga_aligned_stack"
+shapefile_path: "data/raw/Shapefile Ouaga/Ouaga.shp"
+figures_dir: "figures/"
+
+
+# -- Band ordering ----------------------------------------------------------
+# Defines the order of bands in the stacked raster.
+# band_index (a dict mapping name → 1-indexed position) is derived automatically.
+
+band_names:
+  - NDVI                # Normalized Difference Vegetation Index
+  - NDBI                # Normalized Difference Built-up Index
+  - BSI                 # Bare Soil Index
+  - DEM                 # Elevation (meters above sea level)
+  - distance_to_water   # Distance to nearest water body (meters)
+  - distance_to_roads   # Distance to nearest road (meters)
+  - built_density       # Fraction of built-up land in 90m neighbourhood
+  - green_density       # Fraction of green land in 90m neighbourhood
+  - LST                 # Land Surface Temperature (°C, hot-season mean)
+  - hotspot             # Binary: 1 = LST hotspot, 0 = not
+
+
+# -- Validation -------------------------------------------------------------
+# Used for data validation during EDA. Pixels outside these ranges
+# (with 10% tolerance) are flagged as warnings.
+
+expected_ranges:
+  NDVI: [-1, 1]
+  NDBI: [-1, 1]
+  BSI: [-1, 1]
+  DEM: [200, 400]               # Ouagadougou sits at ~300m elevation
+  distance_to_water: [0, 30000] # meters
+  distance_to_roads: [0, 10000] # meters
+  built_density: [0, 1]
+  green_density: [0, 1]
+  LST: [25, 60]                 # Celsius, hot season
+  hotspot: [0, 1]               # binary
+
+
+# -- Reproducibility --------------------------------------------------------
+
+random_state: 42
+
+
+# -- GEE export (only needed if re-running the processing pipeline) ---------
+# Most people won't need to touch these. They control how data is computed
+# on Google Earth Engine and downloaded locally.
+#
+# To re-run Step 1 (GEE pipeline) yourself, replace the placeholders below with
+# your own GEE Cloud project ID and the asset paths where you have uploaded the
+# Ouagadougou boundary shapefile and the cleaned OSM roads (see data/README.md).
+
+ee_project: "<your-gee-project-id>"
+ee_boundary_asset: "projects/<your-gee-project>/assets/Ouaga_boundary"
+roads_asset: "projects/<your-gee-project>/assets/Ouaga_roads"

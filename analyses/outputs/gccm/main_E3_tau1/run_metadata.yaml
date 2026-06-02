@@ -1,0 +1,33 @@
+timestamp: 2026-03-02 17:22:20 CET
+run_label: agg5_tau1_Efixed3_8pred
+git_hash: 665a6d5
+git_dirty: clean
+r_version: 4.3.1
+spEDM_version: '1.7'
+terra_version: 1.8.54
+params:
+  AGG_FACTOR: 5.0
+  E_RANGE: '2:15'
+  LIB_SIZES: seq(10,120,10)
+  N_PRED: 2000.0
+  SEED: 42.0
+  THREADS: 6.0
+  tau: 1
+  detrend: yes
+  fixed_E: 3
+  predictors:
+  - built_density
+  - green_density
+  - distance_to_water
+  - distance_to_roads
+  - DEM
+  - NDBI
+  - BSI
+  - NDVI
+  target: LST
+notes:
+  lib_pred_split: lib includes all valid pixels (Gao protocol)
+  e_selection: fixed E=3 for all variables
+  ci_correction: Clifford/Dutilleul effective-N on detrended residuals via SpatialPack::modified.ttest
+fingerprint: 5|2,3,4,5,6,7,8,9,10,11,12,13,14,15|10,20,30,40,50,60,70,80,90,100,110,120|2000|42|1|BSI,built_density,DEM,distance_to_roads,distance_to_water,green_density,NDBI,NDVI|fixedE3
+

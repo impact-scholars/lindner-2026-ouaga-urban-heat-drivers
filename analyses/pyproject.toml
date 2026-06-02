@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ouaga-urban-heat-drivers"
+version = "0.1.0"
+description = "Causal drivers of urban heat hotspots in Ouagadougou"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "AGPL-3.0-or-later" }
+authors = [
+    { name = "Helyne Adamson", email = "helyne.adamson@gmail.com" },
+    { name = "Elisabeth Lindner", email = "elisabeth.lindner@uni-heidelberg.de" },
+]
+dynamic = ["dependencies"]
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[tool.setuptools.dynamic]
+dependencies = { file = ["requirements.txt"] }
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]
