@@ -4,6 +4,8 @@ abstract: |
   Urban heat islands threaten fast-growing Sahelian cities, yet causal drivers of surface heating remain unknown. Here we combine machine-learning classification (XGBoost, Random Forest, SVM) with spatial causal inference to disentangle correlation from causation among hotspot drivers in Ouagadougou, Burkina Faso. XGBoost generalised best (F1 = 0.70, κ = 0.67) while SHAP analysis identified built-up density as the dominant predictor. Geographical convergent cross-mapping confirmed it as a unidirectional cause of surface temperature, while spectral indices showed only bidirectional coupling despite strong correlations. Opposite to humid tropical cities, lower built-up density increases hotspot risk due to exposed bare soil. These findings point to compact urban form as a heat mitigation strategy.
 acknowledgments: |
   We are grateful to the Climatematch Impact Scholars Program for providing the framework, training, and platform that made this collaboration possible. We also acknowledge the "NSF Science and Technology Center (STC) Learning the Earth With Artificial Intelligence and Physics (LEAP)" for making its Pangeo JupyterHub available to Impact Scholars participants.
+data_availability: |
+    Published via [Impact Scholars](https://github.com/impact-scholars/lindner-2026-ouaga-urban-heat-drivers); original [development repository](https://github.com/helyne/lindner-2026-ouaga-urban-heat-drivers).
 ---
 
 # Introduction
