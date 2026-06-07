@@ -1,3 +1,10 @@
+> **Archival Notice**  
+> This repository is the **permanent archival publication record** for an
+> Impact Scholars Program micropublication. The original development
+> repository is at 
+> **https://github.com/helyne/lindner-2026-ouaga-urban-heat-drivers**  
+> This archive preserves the version of record as accepted for publication.
+
 # Low Built-Up Density Emerges as a Key Driver of Heat Extremes over the Sahel
 
 This repository contains the Impact Scholars Program 2025–2026 micropublication *"Low Built-Up Density Emerges as a Key Driver of Heat Extremes over the Sahel"* by Elisabeth Lindner, Helyne Adamson, Ajadi Sodiq Abayomi, Sharon Christa, and Daniel Fiifi Tawia Hagan.
