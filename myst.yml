@@ -83,6 +83,11 @@ project:
   - remote sensing
 
   github: "https://github.com/impact-scholars/lindner-2026-ouaga-urban-heat-drivers"
+  options:
+    youtube: https://youtu.be/GHNo40Xe5J0?t=1426
+  downloads:
+  - title: Seminar Presentation
+    url: https://youtu.be/GHNo40Xe5J0?t=1426
 
   bibliography:
   - bib.bib
